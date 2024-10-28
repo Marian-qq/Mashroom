@@ -1,0 +1,23 @@
+
+{
+    "name": "mashroom_project",
+    "version": "1.0.0",
+    "description": "Mashroom",
+    "main": "backend/app.js",
+    "scripts": {
+        "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+        "start:prod": "cd backend && npm run start",
+        "start:dev": "concurrently \"npm run backend\" \"npm run frontend\" -k",
+        "frontend": "cd frontend && npm run start",
+        "backend": "cd backend && node app.js",
+        "install": "cd frontend && npm install && cd ../backend && npm install",
+        "build": "cd frontend && npm run build"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "concurrently": "^4.1.2"
+    },
+    "dependencies": {
+        "if-env": "^1.0.4"
+    }
+}

@@ -1,0 +1,13 @@
+CREATE DATABASE mashroom;
+
+CREATE TABLE `user` (
+  `id`          INT(11) NOT NULL AUTO_INCREMENT,
+  `uuid`        VARCHAR(255) NOT NULL,
+  `tg_id`       INT(11) NOT NULL,
+  `tg_uuid`     VARCHAR(255) NOT NULL,
+  `name`        VARCHAR(255) NOT NULL,
+  `coins`       INT(11) NOT NULL,
+  `created_at`  TIMESTAMP NOT NULL DEFAULT current_timestamp(),
+  `updated_at`  TIMESTAMP NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+);
